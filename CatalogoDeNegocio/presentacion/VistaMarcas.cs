@@ -30,8 +30,8 @@ namespace presentacion
             try
             {
                 List<Marca> lista = marcas.listar();
-                dataGridView1.DataSource = lista;
-                dataGridView1.Columns["Nombre"].Visible = false;
+                dGVMarcas.DataSource = lista;
+                //dGVMarcas.Columns["Nombre"].Visible = false;
             }
             catch (Exception ex)
             {

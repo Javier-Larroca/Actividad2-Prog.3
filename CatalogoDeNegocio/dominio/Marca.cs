@@ -23,6 +23,11 @@ namespace dominio
             CodigoMarca = codigo;
         }
 
+        public Marca(int codigo)
+        {
+            CodigoMarca = codigo;
+        }
+
         //Funciones
     }
 }

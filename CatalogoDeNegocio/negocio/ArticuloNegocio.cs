@@ -8,7 +8,7 @@ using dominio;
 
 namespace negocio
 {
-    class ArticuloNegocio
+    public class ArticuloNegocio
     {
         public List<Articulo> Listar()
         {
@@ -16,19 +16,20 @@ namespace negocio
             ConexionDatos conexion = new ConexionDatos();
             try
             {
-                conexion.setearConsulta("");
+                conexion.setearConsulta("Select * From Articulos");
                 conexion.ejecutarLectura();
 
                 while (conexion.Lector.Read())
                 {
-                    Articulo backup = new Articulo(1,"","",1,1,1,"");
-                        //(String)conexion.Lector['Codigo'],
-                        //(String)conexion.Lector['Nombre'],
-                        //(String)conexion.Lector['Descripcion'],
-                        //(int)conexion.Lector['idMarca'],
-                        //(int)conexion.Lector['idCategoria'],
-                        //(float)conexion.Lector['Precio'],
-                        //(String)conexion.Lector['ImagenUrl']);
+                    Articulo backup = new Articulo();
+
+                    backup.CodigoArticulo = (String)conexion.Lector["Codigo"];
+                    backup.Nombre = (String)conexion.Lector["Nombre"];
+                    backup.Descripcion = (String)conexion.Lector["Descripcion"];
+                    backup.Marca = new Marca((int)conexion.Lector["idMarca"]);
+                    backup.Categoria = new Categoria((int)conexion.Lector["idCategoria"]);
+                    backup.Precio = (decimal)conexion.Lector["Precio"];
+                    backup.UrlImagen=(String)conexion.Lector["ImagenUrl"];
 
                     lista.Add(backup);
                 }
@@ -37,7 +38,6 @@ namespace negocio
             catch(Exception ex)
             {
                 throw ex;
-
             }
             finally
             {

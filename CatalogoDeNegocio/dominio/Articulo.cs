@@ -8,15 +8,15 @@ namespace dominio
 {
     public class Articulo
     {
-        public int CodigoArticulo{ get; set; }
+        public String CodigoArticulo{ get; set; }
         public String Nombre { get; set; }
         public String Descripcion{ get; set; }
         public  Marca Marca{ get; set; }
         public Categoria Categoria { get; set; }
-        public float Precio { get; set; }
+        public decimal Precio { get; set; }
         public String UrlImagen { get; set; }
 
-        public Articulo(int codigo, String nombre, String descripcion, int idMarca, int cat, float precio, String imagen)
+        public Articulo(String codigo, String nombre, String descripcion, int idMarca, int cat, decimal precio, String imagen)
         {
             CodigoArticulo = codigo;
             Nombre = nombre;
@@ -24,7 +24,11 @@ namespace dominio
             Precio = precio;
             UrlImagen = imagen;
         }
-        
+        public Articulo()
+        {
+
+        }
+
         //Funciones
     }
 }

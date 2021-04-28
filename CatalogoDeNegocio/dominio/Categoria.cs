@@ -23,6 +23,11 @@ namespace dominio
             Nombre = nombre;
             CodigoCategoria = id;
         }
+
+        public Categoria(int id)
+        {
+            CodigoCategoria = id;
+        }
         //Funciones
     }
 }
