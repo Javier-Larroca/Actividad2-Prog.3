@@ -58,7 +58,7 @@ namespace presentacion
 
         private void RecargarImg(string img)
         {
-            pBMarcas.Load(img);
+            pBArticulo.Load(img);
         }
 
         private void dGVArticulos_MouseClick(object sender, MouseEventArgs e)

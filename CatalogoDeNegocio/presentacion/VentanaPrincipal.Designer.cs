@@ -33,10 +33,10 @@ namespace presentacion
             this.ListarMarcas = new System.Windows.Forms.Button();
             this.ListarCategorias = new System.Windows.Forms.Button();
             this.dGVArticulos = new System.Windows.Forms.DataGridView();
-            this.pBMarcas = new System.Windows.Forms.PictureBox();
+            this.pBArticulo = new System.Windows.Forms.PictureBox();
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBMarcas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // ListarMarcas
@@ -85,16 +85,17 @@ namespace presentacion
             this.dGVArticulos.TabIndex = 2;
             this.dGVArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVArticulos_MouseClick);
             // 
-            // pBMarcas
+            // pBArticulo
             // 
-            this.pBMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBMarcas.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pBMarcas.ErrorImage")));
-            this.pBMarcas.Location = new System.Drawing.Point(482, 55);
-            this.pBMarcas.Name = "pBMarcas";
-            this.pBMarcas.Size = new System.Drawing.Size(228, 205);
-            this.pBMarcas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBMarcas.TabIndex = 3;
-            this.pBMarcas.TabStop = false;
+            this.pBArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBArticulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pBArticulo.ErrorImage = null;
+            this.pBArticulo.Location = new System.Drawing.Point(482, 55);
+            this.pBArticulo.Name = "pBArticulo";
+            this.pBArticulo.Size = new System.Drawing.Size(228, 205);
+            this.pBArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBArticulo.TabIndex = 3;
+            this.pBArticulo.TabStop = false;
             // 
             // btnAgregarArticulo
             // 
@@ -120,7 +121,7 @@ namespace presentacion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(737, 371);
             this.Controls.Add(this.btnAgregarArticulo);
-            this.Controls.Add(this.pBMarcas);
+            this.Controls.Add(this.pBArticulo);
             this.Controls.Add(this.dGVArticulos);
             this.Controls.Add(this.ListarCategorias);
             this.Controls.Add(this.ListarMarcas);
@@ -130,7 +131,7 @@ namespace presentacion
             this.Text = "Catalogador de articulos";
             this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBMarcas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBArticulo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,7 +141,7 @@ namespace presentacion
         private System.Windows.Forms.Button ListarMarcas;
         private System.Windows.Forms.Button ListarCategorias;
         private System.Windows.Forms.DataGridView dGVArticulos;
-        private System.Windows.Forms.PictureBox pBMarcas;
+        private System.Windows.Forms.PictureBox pBArticulo;
         private System.Windows.Forms.Button btnAgregarArticulo;
     }
 }

@@ -39,10 +39,12 @@ namespace presentacion
             this.label4 = new System.Windows.Forms.Label();
             this.cBCategorias = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pBMarca = new System.Windows.Forms.PictureBox();
+            this.tBUrlImage = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pBMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,21 +137,22 @@ namespace presentacion
             this.label5.TabIndex = 9;
             this.label5.Text = "Categorias";
             // 
-            // pictureBox1
+            // pBMarca
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(339, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(222, 188);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pBMarca.Location = new System.Drawing.Point(258, 30);
+            this.pBMarca.Name = "pBMarca";
+            this.pBMarca.Size = new System.Drawing.Size(222, 192);
+            this.pBMarca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBMarca.TabIndex = 10;
+            this.pBMarca.TabStop = false;
             // 
-            // textBox4
+            // tBUrlImage
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(16, 306);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(171, 21);
-            this.textBox4.TabIndex = 12;
+            this.tBUrlImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBUrlImage.Location = new System.Drawing.Point(16, 306);
+            this.tBUrlImage.Name = "tBUrlImage";
+            this.tBUrlImage.Size = new System.Drawing.Size(171, 21);
+            this.tBUrlImage.TabIndex = 12;
             // 
             // label6
             // 
@@ -161,15 +164,50 @@ namespace presentacion
             this.label6.TabIndex = 11;
             this.label6.Text = "URL Imagen";
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.Black;
+            this.btnAceptar.Location = new System.Drawing.Point(258, 278);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAceptar.Size = new System.Drawing.Size(109, 37);
+            this.btnAceptar.TabIndex = 13;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(371, 278);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCancelar.Size = new System.Drawing.Size(109, 37);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // agregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(619, 450);
-            this.Controls.Add(this.textBox4);
+            this.ClientSize = new System.Drawing.Size(528, 363);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.tBUrlImage);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pBMarca);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cBCategorias);
             this.Controls.Add(this.label4);
@@ -182,9 +220,10 @@ namespace presentacion
             this.Controls.Add(this.label1);
             this.Name = "agregarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "agregarArticulo";
+            this.Text = "Agregar Articulo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.agregarArticulo_FormClosing);
             this.Load += new System.EventHandler(this.agregarArticulo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,8 +241,10 @@ namespace presentacion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBCategorias;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.PictureBox pBMarca;
+        private System.Windows.Forms.TextBox tBUrlImage;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

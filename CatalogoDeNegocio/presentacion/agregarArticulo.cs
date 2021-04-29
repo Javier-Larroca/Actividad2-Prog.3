@@ -34,5 +34,24 @@ namespace presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
+
+       
+        private void RecargarImg(string img)
+        {
+            pBMarca.Load(img);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void agregarArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Estas Seguro? Perderás los datos", "Saliendo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                return;
+
+            Dispose();
+        }
     }
 }
