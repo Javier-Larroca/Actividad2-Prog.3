@@ -39,12 +39,19 @@ namespace presentacion
             {
                 listaArticulos = articuloNegocio.Listar();
                 dGVArticulos.DataSource = listaArticulos;
+
+                //Se ocultan las columnas que no queremos mostrar en la ventana principal.
+                dGVArticulos.Columns["CodigoArticulo"].Visible = false;
+                dGVArticulos.Columns["Descripcion"].Visible = false;
+                dGVArticulos.Columns["Categoria"].Visible = false;
                 dGVArticulos.Columns["UrlImagen"].Visible = false;
+
+                //Se llama al atributo RecargarImg pasandole la posicion 0 de la lista para que este cargue la primer imagen del arreglo de Articulos.
                 RecargarImg(listaArticulos[0].UrlImagen);
             }
             catch (Exception ex)
             {
-
+                
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -65,9 +72,17 @@ namespace presentacion
             catch 
             {
                 //En caso de no poder encontrar o acceder a la URL del articulo, procedemos a cargar una imagen de error
-                RecargarImg("https://martinbrainon.com/inicio/wp-content/uploads/2017/04/false-2061132_1280.png");
+                RecargarImg("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_error.svg/1200px-Nuvola_apps_error.svg.png");
             }
 
+        }
+
+        private void btnAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            agregarArticulo agrArticulo = new agregarArticulo();
+            agrArticulo.ShowDialog();
+
+            cargarGrillaArticulos();
         }
     }
 }

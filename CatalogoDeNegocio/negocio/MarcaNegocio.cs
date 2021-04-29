@@ -9,28 +9,58 @@ namespace negocio
 {
     public class MarcaNegocio
     {
+        //public List<Marca> listar()
+        //{
+        //    List<Marca> lista = new List<Marca>();
+        //    ConexionDatos nuevaConexion = new ConexionDatos();
+        //    try
+        //    {
+        //        nuevaConexion.setearConsulta("SELECT  Id, Descripcion FROM MARCAS");
+        //        nuevaConexion.ejecutarLectura();
+
+        //        while (nuevaConexion.Lector.Read())
+        //        {
+        //            Marca backup = new Marca((String)nuevaConexion.Lector["Descripcion"]);
+        //            lista.Add(backup);
+        //        }
+        //        return lista;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        nuevaConexion.cerrarConexion();
+        //    }
+
+        //}
+
+
         public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
             ConexionDatos nuevaConexion = new ConexionDatos();
-            try
-            {
-                nuevaConexion.setearConsulta("SELECT  Id, Descripcion FROM MARCAS");
-                nuevaConexion.ejecutarLectura();
-
-                while (nuevaConexion.Lector.Read())
+                try
                 {
-                    Marca backup = new Marca((String)nuevaConexion.Lector["Descripcion"]);
-                    lista.Add(backup);
+                    nuevaConexion.setearConsulta("SELECT  Id, Descripcion FROM MARCAS");
+                    nuevaConexion.ejecutarLectura();
+
+                    while (nuevaConexion.Lector.Read())
+                    {
+                        //Creacion de lista, cargando los objetos de la misma directamente con el constructor de la clase.
+                        lista.Add(new Marca((int)nuevaConexion.Lector["Id"], (String)nuevaConexion.Lector["Descripcion"]));
+                    } 
+                    return lista;
+                 }
+                 catch (Exception ex)
+                 {
+                        throw ex;
+                 }
+                 finally
+                 {
+                        nuevaConexion.cerrarConexion();
                 }
-                return lista;
-            }
-            catch (Exception ex){
-                throw ex;
-            }
-            finally {
-                nuevaConexion.cerrarConexion();
-            }
         }
     }
 }

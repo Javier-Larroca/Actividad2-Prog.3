@@ -17,14 +17,9 @@ namespace dominio
 
         }
 
-        public Marca(String nombre, int codigo)
+        public Marca(int codigo, String nombre)
         {
             Nombre = nombre;
-            CodigoMarca = codigo;
-        }
-
-        public Marca(int codigo)
-        {
             CodigoMarca = codigo;
         }
 
@@ -32,6 +27,12 @@ namespace dominio
         {
             return Nombre;
         }
+
+        //public Marca(int codigo)
+        //{
+        //    CodigoMarca = codigo;
+        //}
+
         //Funciones
     }
 }

@@ -43,9 +43,9 @@ namespace presentacion
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVMarcas.Location = new System.Drawing.Point(200, 12);
+            this.dGVMarcas.Location = new System.Drawing.Point(170, 12);
             this.dGVMarcas.Name = "dGVMarcas";
-            this.dGVMarcas.Size = new System.Drawing.Size(185, 305);
+            this.dGVMarcas.Size = new System.Drawing.Size(215, 305);
             this.dGVMarcas.TabIndex = 0;
             // 
             // AgregarMarca
@@ -56,7 +56,7 @@ namespace presentacion
             this.AgregarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.AgregarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgregarMarca.ForeColor = System.Drawing.Color.Black;
-            this.AgregarMarca.Location = new System.Drawing.Point(43, 52);
+            this.AgregarMarca.Location = new System.Drawing.Point(19, 52);
             this.AgregarMarca.Name = "AgregarMarca";
             this.AgregarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.AgregarMarca.Size = new System.Drawing.Size(109, 37);
@@ -72,7 +72,7 @@ namespace presentacion
             this.EliminarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.EliminarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarMarca.ForeColor = System.Drawing.Color.Black;
-            this.EliminarMarca.Location = new System.Drawing.Point(43, 128);
+            this.EliminarMarca.Location = new System.Drawing.Point(19, 128);
             this.EliminarMarca.Name = "EliminarMarca";
             this.EliminarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EliminarMarca.Size = new System.Drawing.Size(109, 37);
@@ -88,7 +88,7 @@ namespace presentacion
             this.EditarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.EditarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditarMarca.ForeColor = System.Drawing.Color.Black;
-            this.EditarMarca.Location = new System.Drawing.Point(43, 214);
+            this.EditarMarca.Location = new System.Drawing.Point(19, 214);
             this.EditarMarca.Name = "EditarMarca";
             this.EditarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EditarMarca.Size = new System.Drawing.Size(109, 37);

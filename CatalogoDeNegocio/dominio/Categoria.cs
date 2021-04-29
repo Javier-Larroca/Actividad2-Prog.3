@@ -18,7 +18,7 @@ namespace dominio
 
         }
 
-        public Categoria (String nombre, int id)
+        public Categoria (int id, String nombre)
         {
             Nombre = nombre;
             CodigoCategoria = id;

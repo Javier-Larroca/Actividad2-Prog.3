@@ -34,6 +34,7 @@ namespace presentacion
             this.ListarCategorias = new System.Windows.Forms.Button();
             this.dGVArticulos = new System.Windows.Forms.DataGridView();
             this.pBMarcas = new System.Windows.Forms.PictureBox();
+            this.btnAgregarArticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBMarcas)).BeginInit();
             this.SuspendLayout();
@@ -73,10 +74,14 @@ namespace presentacion
             // 
             // dGVArticulos
             // 
-            this.dGVArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVArticulos.Location = new System.Drawing.Point(12, 26);
+            this.dGVArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGVArticulos.ColumnHeadersHeight = 25;
+            this.dGVArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dGVArticulos.Location = new System.Drawing.Point(22, 26);
             this.dGVArticulos.Name = "dGVArticulos";
-            this.dGVArticulos.Size = new System.Drawing.Size(479, 265);
+            this.dGVArticulos.Size = new System.Drawing.Size(433, 265);
             this.dGVArticulos.TabIndex = 2;
             this.dGVArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVArticulos_MouseClick);
             // 
@@ -84,12 +89,29 @@ namespace presentacion
             // 
             this.pBMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBMarcas.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pBMarcas.ErrorImage")));
-            this.pBMarcas.Location = new System.Drawing.Point(497, 55);
+            this.pBMarcas.Location = new System.Drawing.Point(482, 55);
             this.pBMarcas.Name = "pBMarcas";
             this.pBMarcas.Size = new System.Drawing.Size(228, 205);
             this.pBMarcas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBMarcas.TabIndex = 3;
             this.pBMarcas.TabStop = false;
+            // 
+            // btnAgregarArticulo
+            // 
+            this.btnAgregarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAgregarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarArticulo.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(22, 322);
+            this.btnAgregarArticulo.Name = "btnAgregarArticulo";
+            this.btnAgregarArticulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(109, 37);
+            this.btnAgregarArticulo.TabIndex = 4;
+            this.btnAgregarArticulo.Text = "Agregar Articulo";
+            this.btnAgregarArticulo.UseVisualStyleBackColor = true;
+            this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
             // VentanaPrincipal
             // 
@@ -97,6 +119,7 @@ namespace presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(737, 371);
+            this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.pBMarcas);
             this.Controls.Add(this.dGVArticulos);
             this.Controls.Add(this.ListarCategorias);
@@ -118,6 +141,7 @@ namespace presentacion
         private System.Windows.Forms.Button ListarCategorias;
         private System.Windows.Forms.DataGridView dGVArticulos;
         private System.Windows.Forms.PictureBox pBMarcas;
+        private System.Windows.Forms.Button btnAgregarArticulo;
     }
 }
 

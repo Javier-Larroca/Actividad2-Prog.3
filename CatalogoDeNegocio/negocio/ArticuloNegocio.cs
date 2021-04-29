@@ -25,6 +25,8 @@ namespace negocio
                 while (conexion.Lector.Read())
                 {
                     Articulo backup = new Articulo();
+
+                    //Carga de objeto utilizando un objeto auxiliar/backup
                     backup.CodigoArticulo = (String)conexion.Lector["Codigo"];
                     backup.Nombre = (String)conexion.Lector["Nombre"];
                     backup.Descripcion = (String)conexion.Lector["Descripcion"];
@@ -32,8 +34,6 @@ namespace negocio
                     backup.Categoria = new Categoria((String)conexion.Lector["Categoria"]);
                     backup.Precio = (decimal)conexion.Lector["Precio"];
                     backup.UrlImagen=(String)conexion.Lector["ImagenUrl"];
-
-                    String hola = backup.Marca.Nombre;
 
                     lista.Add(backup);
                 }
