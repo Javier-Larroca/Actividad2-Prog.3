@@ -16,20 +16,24 @@ namespace negocio
             ConexionDatos conexion = new ConexionDatos();
             try
             {
-                conexion.setearConsulta("Select * From Articulos");
+                conexion.setearConsulta("Select Ar.Codigo, Ar.Nombre, Ar.Descripcion, Mar.Descripcion as Marca,  Cat.Descripcion as Categoria, Ar.ImagenUrl, Ar.Precio " +
+                    "From ARTICULOS as Ar " +
+                    "Inner Join MARCAS as Mar on Ar.IdMarca=Mar.Id " +
+                    "Inner Join CATEGORIAS as Cat on Ar.IdCategoria=Cat.Id");
                 conexion.ejecutarLectura();
 
                 while (conexion.Lector.Read())
                 {
                     Articulo backup = new Articulo();
-
                     backup.CodigoArticulo = (String)conexion.Lector["Codigo"];
                     backup.Nombre = (String)conexion.Lector["Nombre"];
                     backup.Descripcion = (String)conexion.Lector["Descripcion"];
-                    backup.Marca = new Marca((int)conexion.Lector["idMarca"]);
-                    backup.Categoria = new Categoria((int)conexion.Lector["idCategoria"]);
+                    backup.Marca = new Marca((String)conexion.Lector["Marca"]);
+                    backup.Categoria = new Categoria((String)conexion.Lector["Categoria"]);
                     backup.Precio = (decimal)conexion.Lector["Precio"];
                     backup.UrlImagen=(String)conexion.Lector["ImagenUrl"];
+
+                    String hola = backup.Marca.Nombre;
 
                     lista.Add(backup);
                 }

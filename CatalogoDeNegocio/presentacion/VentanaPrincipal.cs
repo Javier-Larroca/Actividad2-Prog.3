@@ -39,12 +39,7 @@ namespace presentacion
             {
                 listaArticulos = articuloNegocio.Listar();
                 dGVArticulos.DataSource = listaArticulos;
-
-                //dGVArticulos.Columns["CodigoArticulo"].Visible = false;
-                //dGVArticulos.Columns["Nombre"].Visible = false;
-                //dGVArticulos.Columns["Descripcion"].Visible = false;
-                //dGVArticulos.Columns["Precio"].Visible = false;
-
+                dGVArticulos.Columns["UrlImagen"].Visible = false;
                 RecargarImg(listaArticulos[0].UrlImagen);
             }
             catch (Exception ex)
@@ -57,6 +52,22 @@ namespace presentacion
         private void RecargarImg(string img)
         {
             pBMarcas.Load(img);
+        }
+
+        private void dGVArticulos_MouseClick(object sender, MouseEventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dGVArticulos.CurrentRow.DataBoundItem;
+            try
+            {
+
+                RecargarImg(seleccionado.UrlImagen);
+            }
+            catch 
+            {
+                //En caso de no poder encontrar o acceder a la URL del articulo, procedemos a cargar una imagen de error
+                RecargarImg("https://martinbrainon.com/inicio/wp-content/uploads/2017/04/false-2061132_1280.png");
+            }
+
         }
     }
 }

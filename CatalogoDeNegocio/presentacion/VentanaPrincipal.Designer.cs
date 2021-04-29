@@ -78,12 +78,16 @@ namespace presentacion
             this.dGVArticulos.Name = "dGVArticulos";
             this.dGVArticulos.Size = new System.Drawing.Size(479, 265);
             this.dGVArticulos.TabIndex = 2;
+            this.dGVArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVArticulos_MouseClick);
             // 
             // pBMarcas
             // 
-            this.pBMarcas.Location = new System.Drawing.Point(535, 79);
+            this.pBMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBMarcas.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pBMarcas.ErrorImage")));
+            this.pBMarcas.Location = new System.Drawing.Point(497, 55);
             this.pBMarcas.Name = "pBMarcas";
-            this.pBMarcas.Size = new System.Drawing.Size(169, 159);
+            this.pBMarcas.Size = new System.Drawing.Size(228, 205);
+            this.pBMarcas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBMarcas.TabIndex = 3;
             this.pBMarcas.TabStop = false;
             // 

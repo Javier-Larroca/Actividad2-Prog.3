@@ -28,6 +28,11 @@ namespace dominio
         {
             CodigoCategoria = id;
         }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
         //Funciones
     }
 }

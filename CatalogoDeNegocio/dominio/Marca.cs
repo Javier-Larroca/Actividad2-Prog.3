@@ -28,6 +28,10 @@ namespace dominio
             CodigoMarca = codigo;
         }
 
+        public override string ToString()
+        {
+            return Nombre;
+        }
         //Funciones
     }
 }
