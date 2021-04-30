@@ -50,3 +50,5 @@ C:\Users\evasquez\Desktop\Git\Programacion III\Actividad2-Prog.3\CatalogoDeNegoc
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.BusquedaArticulo.resources
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.VentanaInicio.resources
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.agregarArticulo.resources
+C:\Users\evasquez\Desktop\Git\Programacion III\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.agregarArticulo.resources
+C:\Users\evasquez\Desktop\Git\Programacion III\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.BusquedaArticulo.resources
