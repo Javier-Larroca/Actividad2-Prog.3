@@ -30,11 +30,11 @@ namespace presentacion
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.codigoArt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.descripcion = new System.Windows.Forms.TextBox();
             this.cBMarcas = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cBCategorias = new System.Windows.Forms.ComboBox();
@@ -44,6 +44,8 @@ namespace presentacion
             this.label6 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.Precio = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBMarca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,13 +59,13 @@ namespace presentacion
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo de Articulo:";
             // 
-            // textBox1
+            // codigoArt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(13, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 21);
-            this.textBox1.TabIndex = 1;
+            this.codigoArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoArt.Location = new System.Drawing.Point(13, 30);
+            this.codigoArt.Name = "codigoArt";
+            this.codigoArt.Size = new System.Drawing.Size(171, 21);
+            this.codigoArt.TabIndex = 1;
             // 
             // label2
             // 
@@ -75,13 +77,13 @@ namespace presentacion
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre:";
             // 
-            // textBox2
+            // nombre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(13, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 21);
-            this.textBox2.TabIndex = 3;
+            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(13, 81);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(171, 21);
+            this.nombre.TabIndex = 3;
             // 
             // label3
             // 
@@ -93,13 +95,13 @@ namespace presentacion
             this.label3.TabIndex = 4;
             this.label3.Text = "Descripcion:";
             // 
-            // textBox3
+            // descripcion
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(13, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(171, 21);
-            this.textBox3.TabIndex = 5;
+            this.descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcion.Location = new System.Drawing.Point(13, 139);
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Size = new System.Drawing.Size(171, 21);
+            this.descripcion.TabIndex = 5;
             // 
             // cBMarcas
             // 
@@ -153,6 +155,7 @@ namespace presentacion
             this.tBUrlImage.Name = "tBUrlImage";
             this.tBUrlImage.Size = new System.Drawing.Size(171, 21);
             this.tBUrlImage.TabIndex = 12;
+            this.tBUrlImage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBUrlImage_KeyPress);
             // 
             // label6
             // 
@@ -172,7 +175,7 @@ namespace presentacion
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
-            this.btnAceptar.Location = new System.Drawing.Point(258, 278);
+            this.btnAceptar.Location = new System.Drawing.Point(258, 299);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAceptar.Size = new System.Drawing.Size(109, 37);
@@ -189,7 +192,7 @@ namespace presentacion
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(371, 278);
+            this.btnCancelar.Location = new System.Drawing.Point(373, 299);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnCancelar.Size = new System.Drawing.Size(109, 37);
@@ -198,12 +201,33 @@ namespace presentacion
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // Precio
+            // 
+            this.Precio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Precio.Location = new System.Drawing.Point(258, 252);
+            this.Precio.Name = "Precio";
+            this.Precio.Size = new System.Drawing.Size(84, 21);
+            this.Precio.TabIndex = 15;
+            this.Precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Precio_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(255, 236);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Precio:";
+            // 
             // agregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(528, 363);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Precio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tBUrlImage);
@@ -213,11 +237,11 @@ namespace presentacion
             this.Controls.Add(this.cBCategorias);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cBMarcas);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.descripcion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.codigoArt);
             this.Controls.Add(this.label1);
             this.Name = "agregarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -233,11 +257,11 @@ namespace presentacion
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox codigoArt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox descripcion;
         private System.Windows.Forms.ComboBox cBMarcas;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBCategorias;
@@ -247,5 +271,7 @@ namespace presentacion
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox Precio;
+        private System.Windows.Forms.Label label7;
     }
 }

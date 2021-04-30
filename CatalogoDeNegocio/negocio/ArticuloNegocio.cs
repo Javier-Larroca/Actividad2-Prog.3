@@ -49,31 +49,36 @@ namespace negocio
             }
         }
 
-        public void agregar(Articulo nuevo)
+        public bool agregar(Articulo nuevo)
         {
             ConexionDatos conexion = new ConexionDatos();
+            bool agrego;
             try {
-                string valores = "VALUES (@codigoArticulo, @descripcion, @marca, @idcategoria, @urlImagen, @precio)";
-                conexion.setearConsulta("INSERT INTO Articulos (Codigo, Nombre, Descripcion, idMarca, idCategoria, UrlImagen, Precio) " + valores);
+                string valores = "VALUES (@codigoArticulo, @nombre, @descripcion, @marca, @idcategoria, @urlImagen, @precio)";
+                conexion.setearConsulta("INSERT INTO Articulos (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) " + valores);
                 conexion.agregarParametro("@codigoArticulo", nuevo.CodigoArticulo);
+                conexion.agregarParametro("@nombre", nuevo.Nombre);
                 conexion.agregarParametro("@descripcion", nuevo.Descripcion);
                 conexion.agregarParametro("@marca", nuevo.Marca.CodigoMarca);
                 conexion.agregarParametro("@idcategoria", nuevo.Categoria.CodigoCategoria);
                 conexion.agregarParametro("@urlImagen", nuevo.UrlImagen);
                 conexion.agregarParametro("@precio", nuevo.Precio);
                 conexion.ejectutarAccion();
+                agrego = true;
 
             }
             catch(Exception ex)
             {
+                agrego = false;
                 throw ex;
-
             }
             finally
             {
 
                 conexion.cerrarConexion();
+                
             }
+            return agrego;
         } 
 
         public void modificar()
