@@ -43,5 +43,34 @@ namespace presentacion
         {
             Close();
         }
+
+        private void AgregarMarca_Click(object sender, EventArgs e)
+        {
+            agregarMarca agregarMarca = new agregarMarca();
+            agregarMarca.ShowDialog();
+
+            cargarGrillaMarcas();
+        }
+
+        private void EliminarMarca_Click(object sender, EventArgs e)
+        {
+            Marca seleccionado = (Marca)dGVMarcas.CurrentRow.DataBoundItem;
+            MarcaNegocio marcaN = new MarcaNegocio();
+            
+            MessageBox.Show("Esta seguro que sea desea eliminar la marca: " + seleccionado.Nombre + ".", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            marcaN.eliminar(seleccionado);
+
+            cargarGrillaMarcas();
+        }
+
+        private void EditarMarca_Click(object sender, EventArgs e)
+        {
+            Marca seleccionado = (Marca)dGVMarcas.CurrentRow.DataBoundItem;
+            modificarMarca modificarMarca = new modificarMarca(seleccionado);
+            modificarMarca.ShowDialog();
+
+            cargarGrillaMarcas();
+        }
     }
 }

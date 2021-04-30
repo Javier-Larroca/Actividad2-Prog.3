@@ -64,6 +64,7 @@ namespace presentacion
             this.AgregarMarca.TabIndex = 2;
             this.AgregarMarca.Text = "Agregar Marca";
             this.AgregarMarca.UseVisualStyleBackColor = true;
+            this.AgregarMarca.Click += new System.EventHandler(this.AgregarMarca_Click);
             // 
             // EliminarMarca
             // 
@@ -80,6 +81,7 @@ namespace presentacion
             this.EliminarMarca.TabIndex = 3;
             this.EliminarMarca.Text = "Eliminar Marca";
             this.EliminarMarca.UseVisualStyleBackColor = true;
+            this.EliminarMarca.Click += new System.EventHandler(this.EliminarMarca_Click);
             // 
             // EditarMarca
             // 
@@ -96,6 +98,7 @@ namespace presentacion
             this.EditarMarca.TabIndex = 4;
             this.EditarMarca.Text = "Editar Marca";
             this.EditarMarca.UseVisualStyleBackColor = true;
+            this.EditarMarca.Click += new System.EventHandler(this.EditarMarca_Click);
             // 
             // button1
             // 

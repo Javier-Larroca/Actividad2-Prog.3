@@ -14,6 +14,9 @@ namespace dominio
         public Marca(String nombre)
         {
             Nombre = nombre;
+        }
+        public Marca()
+        {
 
         }
 

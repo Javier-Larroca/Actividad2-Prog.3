@@ -52,11 +52,23 @@
     <Compile Include="agregarArticulo.Designer.cs">
       <DependentUpon>agregarArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="agregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agregarMarca.Designer.cs">
+      <DependentUpon>agregarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusquedaArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BusquedaArticulo.Designer.cs">
       <DependentUpon>BusquedaArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modificarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificarMarca.Designer.cs">
+      <DependentUpon>modificarMarca.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaInicio.cs">
       <SubType>Form</SubType>
@@ -81,8 +93,17 @@
     <EmbeddedResource Include="agregarArticulo.resx">
       <DependentUpon>agregarArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="agregarMarca.aa-DJ.resx">
+      <DependentUpon>agregarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agregarMarca.resx">
+      <DependentUpon>agregarMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BusquedaArticulo.resx">
       <DependentUpon>BusquedaArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificarMarca.resx">
+      <DependentUpon>modificarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaInicio.resx">
       <DependentUpon>VentanaInicio.cs</DependentUpon>

@@ -62,5 +62,67 @@ namespace negocio
                         nuevaConexion.cerrarConexion();
                 }
         }
+
+
+        public void agregar(Marca nuevo)
+        {
+            ConexionDatos conexion = new ConexionDatos();
+            try
+            {
+                string valor = "VALUES (@Nombre)";
+                conexion.setearConsulta("INSERT INTO MARCAS (Descripcion) " + valor);
+                conexion.agregarParametro("@Nombre", nuevo.Nombre);
+                conexion.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Marca mEliminar)
+        {
+            ConexionDatos conexion = new ConexionDatos();
+            try
+            {
+                conexion.setearConsulta("Delete from MARCAS where Id= @Id");
+                conexion.agregarParametro("@Id", mEliminar.CodigoMarca);
+                conexion.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+        public void modificar(Marca mModificar)
+        {
+            ConexionDatos conexion = new ConexionDatos();
+            try
+            {
+                conexion.setearConsulta("UPDATE Marcas SET Descripcion = @mNombre where Id= @Id");
+                conexion.agregarParametro("@Id", mModificar.CodigoMarca);
+                conexion.agregarParametro("@mNombre", mModificar.Nombre);
+                conexion.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
     }
 }
