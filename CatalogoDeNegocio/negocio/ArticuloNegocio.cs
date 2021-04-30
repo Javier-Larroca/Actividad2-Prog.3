@@ -53,8 +53,14 @@ namespace negocio
         {
             ConexionDatos conexion = new ConexionDatos();
             try {
-                string valores = "values(" + nuevo.CodigoArticulo + ", '" + nuevo.Descripcion + "', '" + nuevo.Marca + "', '" + nuevo.UrlImagen + "', " + nuevo.Categoria + ", 1)";
-                conexion.setearConsulta("insert into Articulos (Codigo, Nombre, Descripcion, idMarca, idCategoria, UrlImagen, Precio" + valores);
+                string valores = "VALUES (@codigoArticulo, @descripcion, @marca, @idcategoria, @urlImagen, @precio)";
+                conexion.setearConsulta("INSERT INTO Articulos (Codigo, Nombre, Descripcion, idMarca, idCategoria, UrlImagen, Precio) " + valores);
+                conexion.agregarParametro("@codigoArticulo", nuevo.CodigoArticulo);
+                conexion.agregarParametro("@descripcion", nuevo.Descripcion);
+                conexion.agregarParametro("@marca", nuevo.Marca.CodigoMarca);
+                conexion.agregarParametro("@idcategoria", nuevo.Categoria.CodigoCategoria);
+                conexion.agregarParametro("@urlImagen", nuevo.UrlImagen);
+                conexion.agregarParametro("@precio", nuevo.Precio);
                 conexion.ejectutarAccion();
 
             }
