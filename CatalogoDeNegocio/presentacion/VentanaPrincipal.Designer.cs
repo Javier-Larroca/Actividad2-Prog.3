@@ -35,6 +35,8 @@ namespace presentacion
             this.dGVArticulos = new System.Windows.Forms.DataGridView();
             this.pBArticulo = new System.Windows.Forms.PictureBox();
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
+            this.modificarArticulo = new System.Windows.Forms.Button();
+            this.eliminarArticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBArticulo)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +92,7 @@ namespace presentacion
             // 
             this.pBArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBArticulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pBArticulo.ErrorImage = null;
+            this.pBArticulo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pBArticulo.ErrorImage")));
             this.pBArticulo.Location = new System.Drawing.Point(482, 55);
             this.pBArticulo.Name = "pBArticulo";
             this.pBArticulo.Size = new System.Drawing.Size(228, 205);
@@ -115,6 +117,40 @@ namespace presentacion
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
             this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
+            // modificarArticulo
+            // 
+            this.modificarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modificarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.modificarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificarArticulo.ForeColor = System.Drawing.Color.Black;
+            this.modificarArticulo.Location = new System.Drawing.Point(146, 322);
+            this.modificarArticulo.Name = "modificarArticulo";
+            this.modificarArticulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.modificarArticulo.Size = new System.Drawing.Size(109, 37);
+            this.modificarArticulo.TabIndex = 5;
+            this.modificarArticulo.Text = "Modificar Articulo";
+            this.modificarArticulo.UseVisualStyleBackColor = true;
+            this.modificarArticulo.Click += new System.EventHandler(this.modificarArticulo_Click);
+            // 
+            // eliminarArticulo
+            // 
+            this.eliminarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eliminarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.eliminarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarArticulo.ForeColor = System.Drawing.Color.Black;
+            this.eliminarArticulo.Location = new System.Drawing.Point(271, 322);
+            this.eliminarArticulo.Name = "eliminarArticulo";
+            this.eliminarArticulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.eliminarArticulo.Size = new System.Drawing.Size(109, 37);
+            this.eliminarArticulo.TabIndex = 6;
+            this.eliminarArticulo.Text = "Eliminar Articulo";
+            this.eliminarArticulo.UseVisualStyleBackColor = true;
+            this.eliminarArticulo.Click += new System.EventHandler(this.eliminarArticulo_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,6 +158,8 @@ namespace presentacion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(737, 371);
+            this.Controls.Add(this.eliminarArticulo);
+            this.Controls.Add(this.modificarArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.pBArticulo);
             this.Controls.Add(this.dGVArticulos);
@@ -145,6 +183,8 @@ namespace presentacion
         private System.Windows.Forms.DataGridView dGVArticulos;
         private System.Windows.Forms.PictureBox pBArticulo;
         private System.Windows.Forms.Button btnAgregarArticulo;
+        private System.Windows.Forms.Button modificarArticulo;
+        private System.Windows.Forms.Button eliminarArticulo;
     }
 }
 

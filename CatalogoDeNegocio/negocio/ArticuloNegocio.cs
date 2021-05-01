@@ -10,16 +10,17 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
+        private ConexionDatos conexion = new ConexionDatos();
         public List<Articulo> Listar()
         {
             List<Articulo> lista = new List<Articulo>();
             ConexionDatos conexion = new ConexionDatos();
             try
             {
-                conexion.setearConsulta("Select Ar.Codigo, Ar.Nombre, Ar.Descripcion, Mar.Descripcion as Marca,  Cat.Descripcion as Categoria, Ar.ImagenUrl, Ar.Precio " +
+                conexion.setearConsulta("Select Ar.Id, Ar.Codigo, Ar.Nombre, Ar.Descripcion, Mar.Descripcion as Marca,  Cat.Descripcion as Categoria, Ar.ImagenUrl, Ar.Precio " +
                     "From ARTICULOS as Ar " +
-                    "Inner Join MARCAS as Mar on Ar.IdMarca=Mar.Id " +
-                    "Inner Join CATEGORIAS as Cat on Ar.IdCategoria=Cat.Id");
+                    "LEFT Join MARCAS as Mar on Ar.IdMarca=Mar.Id " +
+                    "LEFT Join CATEGORIAS as Cat on Ar.IdCategoria=Cat.Id");
                 conexion.ejecutarLectura();
 
                 while (conexion.Lector.Read())
@@ -27,11 +28,26 @@ namespace negocio
                     Articulo backup = new Articulo();
 
                     //Carga de objeto utilizando un objeto auxiliar/backup
+                    backup.Id = (int)conexion.Lector["Id"];
                     backup.CodigoArticulo = (String)conexion.Lector["Codigo"];
                     backup.Nombre = (String)conexion.Lector["Nombre"];
                     backup.Descripcion = (String)conexion.Lector["Descripcion"];
-                    backup.Marca = new Marca((String)conexion.Lector["Marca"]);
-                    backup.Categoria = new Categoria((String)conexion.Lector["Categoria"]);
+                    //Agrego IF para validar en caso de que no tenga marca, le asignamos "Sin marca asociada"
+                    if (conexion.Lector["Marca"] == DBNull.Value)
+                    {
+                        backup.Marca = new Marca("Sin marca");
+                    }
+                    else
+                    {
+                        backup.Marca = new Marca((String)conexion.Lector["Marca"]);
+                    }
+                    if (conexion.Lector["Categoria"] == DBNull.Value)
+                    {
+                        backup.Categoria = new Categoria("Sin categoria");
+                    } else
+                    {
+                        backup.Categoria = new Categoria((String)conexion.Lector["Categoria"]);
+                    }
                     backup.Precio = (decimal)conexion.Lector["Precio"];
                     backup.UrlImagen=(String)conexion.Lector["ImagenUrl"];
 
@@ -51,7 +67,6 @@ namespace negocio
 
         public bool agregar(Articulo nuevo)
         {
-            ConexionDatos conexion = new ConexionDatos();
             bool agrego;
             try {
                 string valores = "VALUES (@codigoArticulo, @nombre, @descripcion, @marca, @idcategoria, @urlImagen, @precio)";
@@ -81,15 +96,78 @@ namespace negocio
             return agrego;
         } 
 
-        public void modificar()
+        public bool modificar(Articulo modificador)
         {
+            bool modifico;
+            try
+            {
+                conexion.setearConsulta("UPDATE Articulos " +
+                    "SET Codigo = @codigoArticulo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @marca, IdCategoria = @idcategoria, ImagenUrl = @urlImagen, Precio = @precio " +
+                    "WHERE Id = @id");
+                conexion.agregarParametro("@id", modificador.Id);
+                conexion.agregarParametro("@codigoArticulo", modificador.CodigoArticulo);
+                conexion.agregarParametro("@nombre", modificador.Nombre);
+                conexion.agregarParametro("@descripcion", modificador.Descripcion);
+                conexion.agregarParametro("@marca", modificador.Marca.CodigoMarca);
+                conexion.agregarParametro("@idcategoria", modificador.Categoria.CodigoCategoria);
+                conexion.agregarParametro("@urlImagen", modificador.UrlImagen);
+                conexion.agregarParametro("@precio", modificador.Precio);
+                conexion.ejectutarAccion();
+                modifico = true;
+
+            }
+            catch (Exception ex)
+            {
+                modifico = false;
+                throw ex;
+            }
+            finally
+            {
+
+                conexion.cerrarConexion();
+
+            }
+            return modifico;
 
         }
 
-        public void eliminar()
+        public bool eliminarArticulo(Articulo eliminador)
         {
+            bool elimino;
+            try
+            {
+                conexion.setearConsulta("DELETE FROM ARTICULOS WHERE Id = @id");
+                conexion.agregarParametro("@id", eliminador.Id);
+                conexion.ejectutarAccion();
+                elimino = true;
 
+            }
+            catch (Exception ex)
+            {
+                elimino = false;
+                throw ex;
+            }
+            finally
+            {
+
+                conexion.cerrarConexion();
+
+            }
+            return elimino;
+
+        }
+
+        public void modificarValoresArticulo(Articulo articuloOriginal, String codigo, String nombre, String descripcion, Marca marcacb, Categoria cat, decimal precio, String imagen)
+        {
+           articuloOriginal.CodigoArticulo = codigo;
+           articuloOriginal.Nombre = nombre;
+           articuloOriginal.Descripcion = descripcion;
+           articuloOriginal.Precio = precio;
+           articuloOriginal.UrlImagen = imagen;
+           articuloOriginal.Marca = new Marca(marcacb.CodigoMarca, marcacb.Nombre);
+           articuloOriginal.Categoria = new Categoria(cat.CodigoCategoria, cat.Nombre);
 
         }
     }
+
 }

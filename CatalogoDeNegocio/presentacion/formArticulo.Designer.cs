@@ -1,7 +1,7 @@
 ﻿
 namespace presentacion
 {
-    partial class agregarArticulo
+    partial class formArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formArticulo));
             this.label1 = new System.Windows.Forms.Label();
             this.codigoArt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -141,6 +142,7 @@ namespace presentacion
             // 
             // pBMarca
             // 
+            this.pBMarca.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pBMarca.ErrorImage")));
             this.pBMarca.Location = new System.Drawing.Point(258, 30);
             this.pBMarca.Name = "pBMarca";
             this.pBMarca.Size = new System.Drawing.Size(222, 192);
@@ -220,7 +222,7 @@ namespace presentacion
             this.label7.TabIndex = 16;
             this.label7.Text = "Precio:";
             // 
-            // agregarArticulo
+            // formArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,7 +245,7 @@ namespace presentacion
             this.Controls.Add(this.label2);
             this.Controls.Add(this.codigoArt);
             this.Controls.Add(this.label1);
-            this.Name = "agregarArticulo";
+            this.Name = "formArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Articulo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.agregarArticulo_FormClosing);

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="agregarArticulo.cs">
+    <Compile Include="formArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="agregarArticulo.Designer.cs">
-      <DependentUpon>agregarArticulo.cs</DependentUpon>
+    <Compile Include="formArticulo.Designer.cs">
+      <DependentUpon>formArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCategoria.cs">
       <SubType>Form</SubType>
@@ -96,8 +96,8 @@
     <Compile Include="VistaMarcas.Designer.cs">
       <DependentUpon>VistaMarcas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="agregarArticulo.resx">
-      <DependentUpon>agregarArticulo.cs</DependentUpon>
+    <EmbeddedResource Include="formArticulo.resx">
+      <DependentUpon>formArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCategoria.resx">
       <DependentUpon>FormCategoria.cs</DependentUpon>
