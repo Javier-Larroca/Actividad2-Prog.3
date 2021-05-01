@@ -9,34 +9,6 @@ namespace negocio
 {
     public class MarcaNegocio
     {
-        //public List<Marca> listar()
-        //{
-        //    List<Marca> lista = new List<Marca>();
-        //    ConexionDatos nuevaConexion = new ConexionDatos();
-        //    try
-        //    {
-        //        nuevaConexion.setearConsulta("SELECT  Id, Descripcion FROM MARCAS");
-        //        nuevaConexion.ejecutarLectura();
-
-        //        while (nuevaConexion.Lector.Read())
-        //        {
-        //            Marca backup = new Marca((String)nuevaConexion.Lector["Descripcion"]);
-        //            lista.Add(backup);
-        //        }
-        //        return lista;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        nuevaConexion.cerrarConexion();
-        //    }
-
-        //}
-
-
         public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
@@ -64,14 +36,14 @@ namespace negocio
         }
 
 
-        public void agregar(Marca nuevo)
+        public void agregar(Marca nMarca)
         {
             ConexionDatos conexion = new ConexionDatos();
             try
             {
                 string valor = "VALUES (@Nombre)";
                 conexion.setearConsulta("INSERT INTO MARCAS (Descripcion) " + valor);
-                conexion.agregarParametro("@Nombre", nuevo.Nombre);
+                conexion.agregarParametro("@Nombre", nMarca.Nombre);
                 conexion.ejectutarAccion();
             }
             catch (Exception ex)

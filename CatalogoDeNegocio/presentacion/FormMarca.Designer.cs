@@ -32,7 +32,7 @@ namespace presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMarca));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.tBAMarca = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,26 +52,28 @@ namespace presentacion
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // tBAMarca
+            // txtMarca
             // 
-            resources.ApplyResources(this.tBAMarca, "tBAMarca");
-            this.tBAMarca.Name = "tBAMarca";
+            resources.ApplyResources(this.txtMarca, "txtMarca");
+            this.txtMarca.Name = "txtMarca";
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // formMarca
+            // FormMarca
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tBAMarca);
+            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Name = "formMarca";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormMarca";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formMarca_FormClosing);
             this.Load += new System.EventHandler(this.formMarca_Load);
             this.ResumeLayout(false);
@@ -83,7 +85,7 @@ namespace presentacion
 
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox tBAMarca;
+        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label1;
     }
 }

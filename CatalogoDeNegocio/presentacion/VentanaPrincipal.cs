@@ -26,6 +26,12 @@ namespace presentacion
             nuevo.ShowDialog();
         }
 
+        private void ListarCategorias_Click(object sender, EventArgs e)
+        {
+            VistaCategorias nuevo = new VistaCategorias();
+            nuevo.ShowDialog();
+        }
+
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
             cargarGrillaArticulos();

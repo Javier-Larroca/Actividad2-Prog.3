@@ -34,5 +34,65 @@ namespace negocio
                 nuevaConexion.cerrarConexion();
             }
         }
+
+        public void agregar(Categoria nCategoria)
+        {
+            ConexionDatos conexion = new ConexionDatos();
+            try
+            {
+                string valor = "VALUES (@Nombre)";
+                conexion.setearConsulta("INSERT INTO CATEGORIAS (Descripcion) " + valor);
+                conexion.agregarParametro("@Nombre", nCategoria.Nombre);
+                conexion.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Categoria cEliminar)
+        {
+            ConexionDatos conexion = new ConexionDatos();
+            try
+            {
+                conexion.setearConsulta("Delete from CATEGORIAS where Id= @Id");
+                conexion.agregarParametro("@Id", cEliminar.CodigoCategoria);
+                conexion.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+        public void modificar(Categoria cModificar)
+        {
+            ConexionDatos conexion = new ConexionDatos();
+            try
+            {
+                conexion.setearConsulta("UPDATE CATEGORIAS SET Descripcion = @mNombre where Id= @Id");
+                conexion.agregarParametro("@Id", cModificar.CodigoCategoria);
+                conexion.agregarParametro("@mNombre", cModificar.Nombre);
+                conexion.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
     }
 }

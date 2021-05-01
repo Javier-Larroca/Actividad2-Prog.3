@@ -15,6 +15,10 @@ namespace dominio
         public Categoria(String nombre)
         {
             Nombre = nombre;
+        }
+
+        public Categoria()
+        {
 
         }
 

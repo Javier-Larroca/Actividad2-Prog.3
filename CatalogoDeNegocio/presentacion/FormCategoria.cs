@@ -7,24 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
 using negocio;
+using dominio;
 
 namespace presentacion
 {
-    public partial class FormMarca : Form
+    public partial class FormCategoria : Form
     {
-        private Marca backupMarca = null;
+        private Categoria backupCategoria = null;
 
-        public FormMarca()
+        public FormCategoria()
         {
             InitializeComponent();
         }
-        public FormMarca(Marca marca)
+
+        public FormCategoria(Categoria categoria)
         {
             InitializeComponent();
-            this.backupMarca = marca;
-            Text = "Editar Marca";
+            this.backupCategoria = categoria;
+            Text = "Editar Categoria";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -32,26 +33,26 @@ namespace presentacion
             Close();
         }
 
-
-        private void formMarca_Load(object sender, EventArgs e)
+        private void FormCategoria_Load(object sender, EventArgs e)
         {
-            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             try
             {
-                if (backupMarca != null)
+                if (backupCategoria!= null)
                 {
-                    txtMarca.Text = backupMarca.Nombre;
+                    txtCategoria.Text = backupCategoria.Nombre;
                 }
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.ToString());
             }
         }
 
-        private void formMarca_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormCategoria_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (backupMarca == null)
+            if (backupCategoria == null)
             {
                 if ((MessageBox.Show("Si cancela el alta se perderán todos los datos", "Cancelar alta de marca", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)) == DialogResult.Cancel)
                     e.Cancel = true;
@@ -60,26 +61,26 @@ namespace presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
             try
             {
-                if (txtMarca.Text != "")
+                if (txtCategoria.Text != "")
                 {
-                    if (backupMarca == null)
+                    if (backupCategoria == null)
                     {
-                        backupMarca = new Marca();
+                        backupCategoria = new Categoria();
                     }
-                    backupMarca.Nombre = txtMarca.Text;
-                    if (backupMarca.CodigoMarca == 0)
+                    backupCategoria.Nombre = txtCategoria.Text;
+                    if (backupCategoria.CodigoCategoria == 0)
                     {
-                        marcaNegocio.agregar(backupMarca);
-                        MessageBox.Show("La marca: " + backupMarca.Nombre + " se agrego correctamente.");
+                        categoriaNegocio.agregar(backupCategoria);
+                        MessageBox.Show("La categoria: " + backupCategoria.Nombre + " se agrego correctamente.");
                     }
                     else
                     {
-                        marcaNegocio.modificar(backupMarca);
-                        MessageBox.Show("La marca: " + backupMarca.Nombre + " se modifico correctamente.");
+                        categoriaNegocio.modificar(backupCategoria);
+                        MessageBox.Show("La categoria: " + backupCategoria.Nombre + " se modifico correctamente.");
                     }
                     Close();
 

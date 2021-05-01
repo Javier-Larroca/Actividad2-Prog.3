@@ -71,6 +71,7 @@ namespace presentacion
             this.ListarCategorias.TabIndex = 1;
             this.ListarCategorias.Text = "Listar Categorias";
             this.ListarCategorias.UseVisualStyleBackColor = true;
+            this.ListarCategorias.Click += new System.EventHandler(this.ListarCategorias_Click);
             // 
             // dGVArticulos
             // 

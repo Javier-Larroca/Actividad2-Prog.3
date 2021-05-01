@@ -30,92 +30,92 @@ namespace presentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VistaMarcas));
-            this.dGVMarcas = new System.Windows.Forms.DataGridView();
-            this.AgregarMarca = new System.Windows.Forms.Button();
-            this.EliminarMarca = new System.Windows.Forms.Button();
-            this.EditarMarca = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVMarcas)).BeginInit();
+            this.dgvMarcas = new System.Windows.Forms.DataGridView();
+            this.btnAgregarMarca = new System.Windows.Forms.Button();
+            this.btnEliminarMarca = new System.Windows.Forms.Button();
+            this.btnEditarMarca = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dGVMarcas
+            // dgvMarcas
             // 
-            this.dGVMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dGVMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVMarcas.Location = new System.Drawing.Point(170, 12);
-            this.dGVMarcas.Name = "dGVMarcas";
-            this.dGVMarcas.Size = new System.Drawing.Size(249, 305);
-            this.dGVMarcas.TabIndex = 0;
+            this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.Location = new System.Drawing.Point(170, 12);
+            this.dgvMarcas.Name = "dgvMarcas";
+            this.dgvMarcas.Size = new System.Drawing.Size(245, 305);
+            this.dgvMarcas.TabIndex = 0;
             // 
-            // AgregarMarca
+            // btnAgregarMarca
             // 
-            this.AgregarMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnAgregarMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AgregarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.AgregarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarMarca.ForeColor = System.Drawing.Color.Black;
-            this.AgregarMarca.Location = new System.Drawing.Point(19, 33);
-            this.AgregarMarca.Name = "AgregarMarca";
-            this.AgregarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AgregarMarca.Size = new System.Drawing.Size(109, 37);
-            this.AgregarMarca.TabIndex = 2;
-            this.AgregarMarca.Text = "Agregar Marca";
-            this.AgregarMarca.UseVisualStyleBackColor = true;
-            this.AgregarMarca.Click += new System.EventHandler(this.AgregarMarca_Click);
+            this.btnAgregarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAgregarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarMarca.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarMarca.Location = new System.Drawing.Point(21, 24);
+            this.btnAgregarMarca.Name = "btnAgregarMarca";
+            this.btnAgregarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregarMarca.Size = new System.Drawing.Size(109, 37);
+            this.btnAgregarMarca.TabIndex = 2;
+            this.btnAgregarMarca.Text = "Agregar Marca";
+            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.AgregarMarca_Click);
             // 
-            // EliminarMarca
+            // btnEliminarMarca
             // 
-            this.EliminarMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnEliminarMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EliminarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.EliminarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarMarca.ForeColor = System.Drawing.Color.Black;
-            this.EliminarMarca.Location = new System.Drawing.Point(19, 112);
-            this.EliminarMarca.Name = "EliminarMarca";
-            this.EliminarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EliminarMarca.Size = new System.Drawing.Size(109, 37);
-            this.EliminarMarca.TabIndex = 3;
-            this.EliminarMarca.Text = "Eliminar Marca";
-            this.EliminarMarca.UseVisualStyleBackColor = true;
-            this.EliminarMarca.Click += new System.EventHandler(this.EliminarMarca_Click);
+            this.btnEliminarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEliminarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarMarca.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMarca.Location = new System.Drawing.Point(21, 103);
+            this.btnEliminarMarca.Name = "btnEliminarMarca";
+            this.btnEliminarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnEliminarMarca.Size = new System.Drawing.Size(109, 37);
+            this.btnEliminarMarca.TabIndex = 3;
+            this.btnEliminarMarca.Text = "Eliminar Marca";
+            this.btnEliminarMarca.UseVisualStyleBackColor = true;
+            this.btnEliminarMarca.Click += new System.EventHandler(this.EliminarMarca_Click);
             // 
-            // EditarMarca
+            // btnEditarMarca
             // 
-            this.EditarMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnEditarMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.EditarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditarMarca.ForeColor = System.Drawing.Color.Black;
-            this.EditarMarca.Location = new System.Drawing.Point(19, 188);
-            this.EditarMarca.Name = "EditarMarca";
-            this.EditarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EditarMarca.Size = new System.Drawing.Size(109, 37);
-            this.EditarMarca.TabIndex = 4;
-            this.EditarMarca.Text = "Editar Marca";
-            this.EditarMarca.UseVisualStyleBackColor = true;
-            this.EditarMarca.Click += new System.EventHandler(this.EditarMarca_Click);
+            this.btnEditarMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEditarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarMarca.ForeColor = System.Drawing.Color.Black;
+            this.btnEditarMarca.Location = new System.Drawing.Point(21, 182);
+            this.btnEditarMarca.Name = "btnEditarMarca";
+            this.btnEditarMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnEditarMarca.Size = new System.Drawing.Size(109, 37);
+            this.btnEditarMarca.TabIndex = 4;
+            this.btnEditarMarca.Text = "Editar Marca";
+            this.btnEditarMarca.UseVisualStyleBackColor = true;
+            this.btnEditarMarca.Click += new System.EventHandler(this.EditarMarca_Click);
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(19, 263);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(109, 37);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(25, 260);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCancelar.Size = new System.Drawing.Size(109, 37);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // VistaMarcas
             // 
@@ -123,27 +123,29 @@ namespace presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(431, 329);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.EditarMarca);
-            this.Controls.Add(this.EliminarMarca);
-            this.Controls.Add(this.AgregarMarca);
-            this.Controls.Add(this.dGVMarcas);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEditarMarca);
+            this.Controls.Add(this.btnEliminarMarca);
+            this.Controls.Add(this.btnAgregarMarca);
+            this.Controls.Add(this.dgvMarcas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "VistaMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VistaMarcas";
+            this.Text = "Lista de Marcas";
             this.Load += new System.EventHandler(this.VistaMarcas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVMarcas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dGVMarcas;
-        private System.Windows.Forms.Button AgregarMarca;
-        private System.Windows.Forms.Button EliminarMarca;
-        private System.Windows.Forms.Button EditarMarca;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvMarcas;
+        private System.Windows.Forms.Button btnAgregarMarca;
+        private System.Windows.Forms.Button btnEliminarMarca;
+        private System.Windows.Forms.Button btnEditarMarca;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

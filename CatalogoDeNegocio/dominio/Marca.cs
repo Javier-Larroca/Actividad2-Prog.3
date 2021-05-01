@@ -31,11 +31,6 @@ namespace dominio
             return Nombre;
         }
 
-        //public Marca(int codigo)
-        //{
-        //    CodigoMarca = codigo;
-        //}
-
         //Funciones
     }
 }
