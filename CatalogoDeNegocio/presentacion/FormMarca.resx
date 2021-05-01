@@ -259,7 +259,7 @@
     <value>Agregar Marca</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>agregarMarca</value>
+    <value>formMarca</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

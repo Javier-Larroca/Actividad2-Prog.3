@@ -1,7 +1,7 @@
 ﻿
 namespace presentacion
 {
-    partial class agregarMarca
+    partial class FormMarca
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarMarca));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMarca));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tBAMarca = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@ namespace presentacion
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // agregarMarca
+            // formMarca
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,7 +71,9 @@ namespace presentacion
             this.Controls.Add(this.tBAMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Name = "agregarMarca";
+            this.Name = "formMarca";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formMarca_FormClosing);
+            this.Load += new System.EventHandler(this.formMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
