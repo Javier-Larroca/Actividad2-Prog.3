@@ -17,7 +17,7 @@ namespace presentacion
         private List<Articulo> listaArticulos;
         private Articulo articuloSeleccionado;
         public VentanaPrincipal()
-        {
+        { 
             InitializeComponent();
         }
 
@@ -36,6 +36,7 @@ namespace presentacion
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
             cargarGrillaArticulos();
+            filtroAutomatico.DataSource = new String[] {"", "Codigo", "Nombre", "Marca", "Categoria" };
         }
 
         private void cargarGrillaArticulos()
@@ -48,11 +49,7 @@ namespace presentacion
                 dGVArticulos.DataSource = listaArticulos;
 
                 //Se ocultan las columnas que no queremos mostrar en la ventana principal.
-                dGVArticulos.Columns["CodigoArticulo"].Visible = false;
-                dGVArticulos.Columns["Descripcion"].Visible = false;
-                dGVArticulos.Columns["Categoria"].Visible = false;
-                dGVArticulos.Columns["UrlImagen"].Visible = false;
-                dGVArticulos.MultiSelect = false;
+                ocultarColumnas();
 
                 //Se llama al atributo RecargarImg pasandole la posicion 0 de la lista para que este cargue la primer imagen del arreglo de Articulos.
                 RecargarImg(listaArticulos[0].UrlImagen);
@@ -62,6 +59,15 @@ namespace presentacion
                 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ocultarColumnas()
+        {
+            dGVArticulos.Columns["Id"].Visible = false;
+            dGVArticulos.Columns["Descripcion"].Visible = false;
+            dGVArticulos.Columns["UrlImagen"].Visible = false;
+            dGVArticulos.MultiSelect = false;
+
         }
 
         private void RecargarImg(string img)
@@ -108,12 +114,11 @@ namespace presentacion
                 formArticulo modifArticulo = new formArticulo(articuloSeleccionado = (Articulo)dGVArticulos.CurrentRow.DataBoundItem);
                 modifArticulo.ShowDialog();
                 cargarGrillaArticulos();
-                //  FALTA DESARROLLLAR PARA FILTRAR SI MODIFICA O CANCELA LA MODIFICACION   
                     dGVArticulos.CurrentCell = null;
-                    dGVArticulos.Rows[posArticuloModificado].DefaultCellStyle.SelectionBackColor = Color.Green;
+                    //dGVArticulos.Rows[posArticuloModificado].DefaultCellStyle.SelectionBackColor = Color.Green;
                     dGVArticulos.Rows[posArticuloModificado].Selected = true;
-                 
-                
+                //dGVArticulos.Rows[posArticuloModificado].DefaultCellStyle.SelectionBackColor = SystemColors.Highlight;
+
             }
         }
 
@@ -141,6 +146,31 @@ namespace presentacion
                     }
                 }
             }
+        }
+
+        private void VentanaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Filtrar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaConFiltro;
+            if (filtroManual.Text != "" && filtroAutomatico.Text != "")
+            {
+                listaConFiltro = listaArticulos.FindAll(Busqueda => Busqueda.CodigoArticulo.ToUpper().Contains(filtroManual.Text.ToUpper()) || Busqueda.Nombre.ToUpper().Contains(filtroManual.Text.ToUpper()));
+                dGVArticulos.DataSource = null;
+                dGVArticulos.DataSource = listaConFiltro;
+            }
+            else 
+            {
+                //Si alguno de los dos campos los deja en blanco, avisamos y volvemos todo a vacío.
+                MessageBox.Show("Para utilizar los filtros debe completar ambos campos");
+                filtroManual.Text = "";
+                filtroAutomatico.Text = "";
+                cargarGrillaArticulos();
+            }
+            ocultarColumnas();
         }
     }
 }

@@ -37,6 +37,9 @@ namespace presentacion
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.modificarArticulo = new System.Windows.Forms.Button();
             this.eliminarArticulo = new System.Windows.Forms.Button();
+            this.filtroAutomatico = new System.Windows.Forms.ComboBox();
+            this.filtroManual = new System.Windows.Forms.TextBox();
+            this.Filtrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBArticulo)).BeginInit();
             this.SuspendLayout();
@@ -82,8 +85,10 @@ namespace presentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVArticulos.ColumnHeadersHeight = 25;
             this.dGVArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dGVArticulos.Location = new System.Drawing.Point(22, 26);
+            this.dGVArticulos.Location = new System.Drawing.Point(22, 40);
             this.dGVArticulos.Name = "dGVArticulos";
+            this.dGVArticulos.ReadOnly = true;
+            this.dGVArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVArticulos.Size = new System.Drawing.Size(433, 265);
             this.dGVArticulos.TabIndex = 2;
             this.dGVArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVArticulos_MouseClick);
@@ -151,6 +156,31 @@ namespace presentacion
             this.eliminarArticulo.UseVisualStyleBackColor = true;
             this.eliminarArticulo.Click += new System.EventHandler(this.eliminarArticulo_Click);
             // 
+            // filtroAutomatico
+            // 
+            this.filtroAutomatico.FormattingEnabled = true;
+            this.filtroAutomatico.Location = new System.Drawing.Point(334, 14);
+            this.filtroAutomatico.Name = "filtroAutomatico";
+            this.filtroAutomatico.Size = new System.Drawing.Size(121, 21);
+            this.filtroAutomatico.TabIndex = 7;
+            // 
+            // filtroManual
+            // 
+            this.filtroManual.Location = new System.Drawing.Point(123, 14);
+            this.filtroManual.Name = "filtroManual";
+            this.filtroManual.Size = new System.Drawing.Size(195, 20);
+            this.filtroManual.TabIndex = 8;
+            // 
+            // Filtrar
+            // 
+            this.Filtrar.Location = new System.Drawing.Point(22, 14);
+            this.Filtrar.Name = "Filtrar";
+            this.Filtrar.Size = new System.Drawing.Size(75, 23);
+            this.Filtrar.TabIndex = 9;
+            this.Filtrar.Text = "Filtrar";
+            this.Filtrar.UseVisualStyleBackColor = true;
+            this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +188,9 @@ namespace presentacion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(737, 371);
+            this.Controls.Add(this.Filtrar);
+            this.Controls.Add(this.filtroManual);
+            this.Controls.Add(this.filtroAutomatico);
             this.Controls.Add(this.eliminarArticulo);
             this.Controls.Add(this.modificarArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
@@ -169,10 +202,12 @@ namespace presentacion
             this.Name = "VentanaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogador de articulos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VentanaPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBArticulo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -185,6 +220,9 @@ namespace presentacion
         private System.Windows.Forms.Button btnAgregarArticulo;
         private System.Windows.Forms.Button modificarArticulo;
         private System.Windows.Forms.Button eliminarArticulo;
+        private System.Windows.Forms.ComboBox filtroAutomatico;
+        private System.Windows.Forms.TextBox filtroManual;
+        private System.Windows.Forms.Button Filtrar;
     }
 }
 
