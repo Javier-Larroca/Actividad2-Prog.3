@@ -37,7 +37,7 @@ namespace presentacion
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.modificarArticulo = new System.Windows.Forms.Button();
             this.eliminarArticulo = new System.Windows.Forms.Button();
-            this.filtroAutomatico = new System.Windows.Forms.ComboBox();
+            this.filtroComboBox = new System.Windows.Forms.ComboBox();
             this.filtroManual = new System.Windows.Forms.TextBox();
             this.Filtrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVArticulos)).BeginInit();
@@ -156,13 +156,13 @@ namespace presentacion
             this.eliminarArticulo.UseVisualStyleBackColor = true;
             this.eliminarArticulo.Click += new System.EventHandler(this.eliminarArticulo_Click);
             // 
-            // filtroAutomatico
+            // filtroComboBox
             // 
-            this.filtroAutomatico.FormattingEnabled = true;
-            this.filtroAutomatico.Location = new System.Drawing.Point(334, 14);
-            this.filtroAutomatico.Name = "filtroAutomatico";
-            this.filtroAutomatico.Size = new System.Drawing.Size(121, 21);
-            this.filtroAutomatico.TabIndex = 7;
+            this.filtroComboBox.FormattingEnabled = true;
+            this.filtroComboBox.Location = new System.Drawing.Point(334, 14);
+            this.filtroComboBox.Name = "filtroComboBox";
+            this.filtroComboBox.Size = new System.Drawing.Size(121, 21);
+            this.filtroComboBox.TabIndex = 7;
             // 
             // filtroManual
             // 
@@ -190,7 +190,7 @@ namespace presentacion
             this.ClientSize = new System.Drawing.Size(737, 371);
             this.Controls.Add(this.Filtrar);
             this.Controls.Add(this.filtroManual);
-            this.Controls.Add(this.filtroAutomatico);
+            this.Controls.Add(this.filtroComboBox);
             this.Controls.Add(this.eliminarArticulo);
             this.Controls.Add(this.modificarArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
@@ -220,7 +220,7 @@ namespace presentacion
         private System.Windows.Forms.Button btnAgregarArticulo;
         private System.Windows.Forms.Button modificarArticulo;
         private System.Windows.Forms.Button eliminarArticulo;
-        private System.Windows.Forms.ComboBox filtroAutomatico;
+        private System.Windows.Forms.ComboBox filtroComboBox;
         private System.Windows.Forms.TextBox filtroManual;
         private System.Windows.Forms.Button Filtrar;
     }

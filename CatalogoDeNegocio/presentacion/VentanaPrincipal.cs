@@ -36,7 +36,7 @@ namespace presentacion
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
             cargarGrillaArticulos();
-            filtroAutomatico.DataSource = new String[] {"", "Codigo", "Nombre", "Marca", "Categoria" };
+            filtroComboBox.DataSource = new String[] {"", "Codigo", "Nombre", "Marca", "Categoria" };
         }
 
         private void cargarGrillaArticulos()
@@ -155,10 +155,14 @@ namespace presentacion
 
         private void Filtrar_Click(object sender, EventArgs e)
         {
-            List<Articulo> listaConFiltro;
-            if (filtroManual.Text != "" && filtroAutomatico.Text != "")
+            
+            if (filtroManual.Text != "" && filtroComboBox.Text != "")
             {
-                listaConFiltro = listaArticulos.FindAll(Busqueda => Busqueda.CodigoArticulo.ToUpper().Contains(filtroManual.Text.ToUpper()) || Busqueda.Nombre.ToUpper().Contains(filtroManual.Text.ToUpper()));
+                List<Articulo>listaConFiltro = listaArticulos.FindAll(Busqueda => 
+                Busqueda.CodigoArticulo.ToUpper().Contains(filtroManual.Text.ToUpper()) && filtroComboBox.Text=="Codigo" 
+                || Busqueda.Nombre.ToUpper().Contains(filtroManual.Text.ToUpper()) && filtroComboBox.Text == "Nombre" 
+                || Busqueda.Categoria.Nombre.ToUpper().Contains(filtroManual.Text.ToUpper()) && filtroComboBox.Text == "Categoria"
+                || Busqueda.Marca.Nombre.ToUpper().Contains(filtroManual.Text.ToUpper()) && filtroComboBox.Text == "Marca");
                 dGVArticulos.DataSource = null;
                 dGVArticulos.DataSource = listaConFiltro;
             }
@@ -167,7 +171,7 @@ namespace presentacion
                 //Si alguno de los dos campos los deja en blanco, avisamos y volvemos todo a vacío.
                 MessageBox.Show("Para utilizar los filtros debe completar ambos campos");
                 filtroManual.Text = "";
-                filtroAutomatico.Text = "";
+                filtroComboBox.Text = "";
                 cargarGrillaArticulos();
             }
             ocultarColumnas();
