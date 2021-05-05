@@ -44,9 +44,10 @@ namespace presentacion
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(170, 12);
+            this.dgvMarcas.Location = new System.Drawing.Point(169, 12);
             this.dgvMarcas.Name = "dgvMarcas";
-            this.dgvMarcas.Size = new System.Drawing.Size(245, 305);
+            this.dgvMarcas.RowHeadersWidth = 28;
+            this.dgvMarcas.Size = new System.Drawing.Size(248, 305);
             this.dgvMarcas.TabIndex = 0;
             // 
             // btnAgregarMarca

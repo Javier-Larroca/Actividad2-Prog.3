@@ -54,7 +54,7 @@ namespace presentacion
         {
             if (backupCategoria == null)
             {
-                if ((MessageBox.Show("Si cancela el alta se perderán todos los datos", "Cancelar alta de marca", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)) == DialogResult.Cancel)
+                if ((MessageBox.Show("Si cancela el alta se perderán todos los datos", "Cancelar alta de categoria", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)) == DialogResult.Cancel)
                     e.Cancel = true;
             }
         }

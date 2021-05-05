@@ -44,9 +44,10 @@ namespace presentacion
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(170, 12);
+            this.dgvCategorias.Location = new System.Drawing.Point(175, 12);
             this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.Size = new System.Drawing.Size(245, 305);
+            this.dgvCategorias.RowHeadersWidth = 30;
+            this.dgvCategorias.Size = new System.Drawing.Size(235, 305);
             this.dgvCategorias.TabIndex = 1;
             // 
             // btnCancelar

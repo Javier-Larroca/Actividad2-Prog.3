@@ -32,7 +32,6 @@ C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\A
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.pdb
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.BusquedaArticulo.resources
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.VentanaInicio.resources
-C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.agregarArticulo.resources
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\bin\Debug\aa-DJ\presentacion.resources.dll
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\aa-DJ\presentacion.resources.dll
 C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.formMarca.resources
@@ -64,3 +63,5 @@ C:\Users\evasquez\Desktop\Git\Programacion III\Actividad2-Prog.3\CatalogoDeNegoc
 C:\Users\evasquez\Desktop\Git\Programacion III\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.csproj.CopyComplete
 C:\Users\evasquez\Desktop\Git\Programacion III\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.exe
 C:\Users\evasquez\Desktop\Git\Programacion III\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.pdb
+C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.formArticulo.resources
+C:\Users\javie\Documents\UTN\Programacion III\Ejercicios Prog. III\Actividad 2\Actividad2-Prog.3\CatalogoDeNegocio\presentacion\obj\Debug\presentacion.formArticuloDetalles.resources

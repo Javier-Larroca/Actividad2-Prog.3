@@ -40,6 +40,7 @@ namespace presentacion
             {
                 cBMarcas.DataSource = marca.listar();
                 cBCategorias.DataSource = categoria.listar();
+                Precio.Text = "0.00";
 
                 if (articuloClase != null)
                 {
@@ -65,21 +66,18 @@ namespace presentacion
         //Si la modifica en modificar_AceptarClick entonces recargo = true y valida si la imagen se puede usar o no.
         private void RecargarImg(string img, bool recargo)
         {
-            
                 try
                 {
                     pBMarca.Load(img);
                 }
                 catch (Exception)
                 {
-                pBMarca.Image = pBMarca.ErrorImage;
-                if (recargo == true)
-                MessageBox.Show("No se puede acceder a la imagen. Modifique URL o contactese con Soporte");
+                    pBMarca.Image = pBMarca.ErrorImage;
+                    if (recargo == true)
+                    MessageBox.Show("No se puede acceder a la imagen. Modifique URL o contactese con Soporte");
                     
-                    //throw;
-                }
-           
-            
+                        //throw;
+                }            
         }
     
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -109,6 +107,9 @@ namespace presentacion
             ArticuloNegocio accionArticulo = new ArticuloNegocio();
             if (articuloClase == null)
                 articuloClase = new Articulo();
+
+            if (Precio.Text == "")
+                Precio.Text = "0.00";
 
             accionArticulo.modificarValoresArticulo(articuloClase, codigoArt.Text, nombre.Text, descripcion.Text, (Marca)cBMarcas.SelectedItem, (Categoria)cBCategorias.SelectedItem, Convert.ToDecimal(Precio.Text), tBUrlImage.Text);
            if (articuloClase.Id == 0) {
@@ -162,6 +163,22 @@ namespace presentacion
             {
                 RecargarImg(tBUrlImage.Text, recargarImagen);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCategoria formCategoria = new FormCategoria();
+            formCategoria.ShowDialog();
+
+            cBCategorias.DataSource = categoria.listar();
+        }
+
+        private void btnMasMarca_Click(object sender, EventArgs e)
+        {
+            FormMarca formMarca = new FormMarca();
+            formMarca.ShowDialog();
+
+            cBMarcas.DataSource = marca.listar();
         }
     }
 }

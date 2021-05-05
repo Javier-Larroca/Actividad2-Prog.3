@@ -47,6 +47,8 @@ namespace presentacion
             this.btnCancelar = new System.Windows.Forms.Button();
             this.Precio = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnMasMarca = new System.Windows.Forms.Button();
+            this.btnMasCategoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBMarca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +108,7 @@ namespace presentacion
             // 
             // cBMarcas
             // 
+            this.cBMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBMarcas.FormattingEnabled = true;
             this.cBMarcas.Location = new System.Drawing.Point(16, 193);
             this.cBMarcas.Name = "cBMarcas";
@@ -124,6 +127,7 @@ namespace presentacion
             // 
             // cBCategorias
             // 
+            this.cBCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBCategorias.FormattingEnabled = true;
             this.cBCategorias.Location = new System.Drawing.Point(16, 252);
             this.cBCategorias.Name = "cBCategorias";
@@ -222,12 +226,48 @@ namespace presentacion
             this.label7.TabIndex = 16;
             this.label7.Text = "Precio:";
             // 
+            // btnMasMarca
+            // 
+            this.btnMasMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMasMarca.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnMasMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasMarca.ForeColor = System.Drawing.Color.Black;
+            this.btnMasMarca.Location = new System.Drawing.Point(190, 193);
+            this.btnMasMarca.Name = "btnMasMarca";
+            this.btnMasMarca.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnMasMarca.Size = new System.Drawing.Size(21, 21);
+            this.btnMasMarca.TabIndex = 17;
+            this.btnMasMarca.Text = "+";
+            this.btnMasMarca.UseVisualStyleBackColor = true;
+            this.btnMasMarca.Click += new System.EventHandler(this.btnMasMarca_Click);
+            // 
+            // btnMasCategoria
+            // 
+            this.btnMasCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMasCategoria.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnMasCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasCategoria.ForeColor = System.Drawing.Color.Black;
+            this.btnMasCategoria.Location = new System.Drawing.Point(190, 253);
+            this.btnMasCategoria.Name = "btnMasCategoria";
+            this.btnMasCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnMasCategoria.Size = new System.Drawing.Size(21, 21);
+            this.btnMasCategoria.TabIndex = 18;
+            this.btnMasCategoria.Text = "+";
+            this.btnMasCategoria.UseVisualStyleBackColor = true;
+            this.btnMasCategoria.Click += new System.EventHandler(this.button1_Click);
+            // 
             // formArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(528, 363);
+            this.Controls.Add(this.btnMasCategoria);
+            this.Controls.Add(this.btnMasMarca);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Precio);
             this.Controls.Add(this.btnCancelar);
@@ -245,6 +285,9 @@ namespace presentacion
             this.Controls.Add(this.label2);
             this.Controls.Add(this.codigoArt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "formArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Articulo";
@@ -275,5 +318,7 @@ namespace presentacion
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox Precio;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnMasMarca;
+        private System.Windows.Forms.Button btnMasCategoria;
     }
 }

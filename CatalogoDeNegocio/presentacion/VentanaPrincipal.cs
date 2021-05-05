@@ -36,7 +36,7 @@ namespace presentacion
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
             cargarGrillaArticulos();
-            filtroComboBox.DataSource = new String[] {"", "Codigo", "Nombre", "Marca", "Categoria" };
+            filtroComboBox.DataSource = new String[] {"", "Codigo", "Nombre", "Marca"};
         }
 
         private void cargarGrillaArticulos()
@@ -65,9 +65,9 @@ namespace presentacion
         {
             dGVArticulos.Columns["Id"].Visible = false;
             dGVArticulos.Columns["Descripcion"].Visible = false;
+            dGVArticulos.Columns["Categoria"].Visible = false;
             dGVArticulos.Columns["UrlImagen"].Visible = false;
             dGVArticulos.MultiSelect = false;
-
         }
 
         private void RecargarImg(string img)
@@ -175,6 +175,29 @@ namespace presentacion
                 cargarGrillaArticulos();
             }
             ocultarColumnas();
+        }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            if (dGVArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione el articulo a para ver sus detalles.");
+            }
+            else
+            {
+                //Agrego esta variable para guardar la posición del articulo modificado y al volver a la grilla que este seleccionado
+                //Por ahora es la unica solución que tuve, debe existir otra forma mas modular seguro
+                int posArticuloModificado = dGVArticulos.CurrentRow.Index;
+                formArticuloDetalles modifArticulo = new formArticuloDetalles(articuloSeleccionado = (Articulo)dGVArticulos.CurrentRow.DataBoundItem);
+                modifArticulo.ShowDialog();
+                cargarGrillaArticulos();
+                dGVArticulos.CurrentCell = null;
+                //dGVArticulos.Rows[posArticuloModificado].DefaultCellStyle.SelectionBackColor = Color.Green;
+                dGVArticulos.Rows[posArticuloModificado].Selected = true;
+                //dGVArticulos.Rows[posArticuloModificado].DefaultCellStyle.SelectionBackColor = SystemColors.Highlight;
+
+            }
+
         }
     }
 }
